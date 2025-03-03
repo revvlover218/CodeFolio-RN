@@ -4,4 +4,5 @@ export const Localize = {
   error: "Error",
   somethingWentWrongWithEmail: "Something went wrong with opening mail",
   somethingWentWrongWithDailer: "Something went wrong with opening Dailer",
+  mapViewTitle: "Where am I in the world:",
 };

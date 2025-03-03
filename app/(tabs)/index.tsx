@@ -8,6 +8,7 @@ import { Link } from "expo-router";
 import { Localize } from "../utils/Localize";
 import { useRef } from "react";
 import { useScrollToTop } from "@react-navigation/native";
+import PrimaryLocationView from "../components/PrimaryLocationView";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
@@ -25,6 +26,7 @@ export default function Tab() {
       <ScrollView ref={scrollRef}>
         <ProfilePictureView></ProfilePictureView>
         <DescriptionView></DescriptionView>
+        <PrimaryLocationView />
       </ScrollView>
       <Link href={"/(tabs)/languages"} asChild>
         <ActionButton text={Localize.goToLanguagesTitle} />
