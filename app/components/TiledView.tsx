@@ -170,10 +170,10 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
 
-    elevation: 4,
+    elevation: 3,
   },
   roundedIconContainer: {
     width: 75,
@@ -182,12 +182,12 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 1,
     },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
+    shadowOpacity: 0.18,
+    shadowRadius: 1.0,
 
-    elevation: 4,
+    elevation: 1,
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 5,

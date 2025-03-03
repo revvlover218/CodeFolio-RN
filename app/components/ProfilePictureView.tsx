@@ -9,7 +9,9 @@ function ProfilePictureView() {
     <View style={styles.background}>
       <RoundedImageView></RoundedImageView>
       <TitledView text={Data.name} />
+      <SubtitledView text={Data.profession} />
       <SubtitledView text={Data.email} />
+      <SubtitledView text={Data.phone} />
     </View>
   );
 }

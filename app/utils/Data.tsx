@@ -149,6 +149,12 @@ This app is written in React Native, and by clicking on the button below, you'll
 export const Data = {
   name: "Reshal Luchman",
   email: "Reshal.luchman2@mtn.com",
+  secondaryEmail: "luchmanreshal@gmail.com",
+  phone: "+27713453720",
+  profession: "Work in progress - React Native Developer!",
   aboutMyself: aboutMyself,
   programmingLanguages: programmingLanguages,
+  jobApplication: "React Native Developer Application",
+  jobProposal:
+    "Thank you for your interest in the following developer role: React Native. We are here to inform you that your application is [insert result here]. ",
 };

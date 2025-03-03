@@ -1,5 +1,17 @@
 import React from "react";
-import { View, Text, StyleSheet, useColorScheme } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  useColorScheme,
+  Pressable,
+} from "react-native";
+import {
+  isValidEmailAddressOrPhoneNumber,
+  isValidEmailAddress,
+  isValidCellNumber,
+} from "../utils/Validation";
+import LinkHelper from "../utils/LinkHelper";
 
 interface Props {
   text: string;
@@ -8,9 +20,40 @@ interface Props {
 const SubtitledView: React.FC<Props> = ({ text }) => {
   const colorScheme = useColorScheme();
   const textColor = colorScheme === "light" ? "dimgray" : "lightgray";
+
+  function onPress() {
+    if (isValidEmailAddress({ text })) {
+      new LinkHelper().compose(text);
+    } else if (isValidCellNumber({ text })) {
+      new LinkHelper().dial(text);
+    }
+  }
+
   return (
-    <View>
-      <Text style={[styles.subtitle, { color: textColor }]}>{text}</Text>
+    <View style={styles.container}>
+      <Pressable
+        style={({ pressed }) => [
+          {
+            opacity:
+              pressed && isValidEmailAddressOrPhoneNumber({ text }) ? 0.5 : 1,
+          },
+        ]}
+        onPress={onPress}
+      >
+        <Text
+          style={[
+            styles.subtitle,
+            {
+              color: textColor,
+              textDecorationLine: isValidEmailAddressOrPhoneNumber({ text })
+                ? "underline"
+                : "none",
+            },
+          ]}
+        >
+          {text}
+        </Text>
+      </Pressable>
     </View>
   );
 };
@@ -18,6 +61,9 @@ const SubtitledView: React.FC<Props> = ({ text }) => {
 export default SubtitledView;
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 5,
+  },
   subtitle: {
     fontSize: 12,
     textAlign: "center",

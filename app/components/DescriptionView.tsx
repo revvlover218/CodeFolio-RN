@@ -13,16 +13,14 @@ function DescriptionView() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.shadowView}>
-        <HeadingView title={Localize.aboutYourselfTitle} />
-        <View
-          style={[
-            styles.descriptionView,
-            { backgroundColor: descriptionBackgroundColor },
-          ]}
-        >
-          <Text style={styles.description}>{Data.aboutMyself}</Text>
-        </View>
+      <HeadingView title={Localize.aboutYourselfTitle} />
+      <View
+        style={[
+          styles.descriptionView,
+          { backgroundColor: descriptionBackgroundColor },
+        ]}
+      >
+        <Text style={styles.description}>{Data.aboutMyself}</Text>
       </View>
     </View>
   );
@@ -32,11 +30,7 @@ export default DescriptionView;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-  },
-  shadowView: {
-    padding: 10,
-    borderRadius: 10,
+    padding: 20,
   },
   titleView: { marginBottom: 5 },
   title: {
@@ -50,11 +44,11 @@ const styles = StyleSheet.create({
     shadowColor: "#000000",
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 1,
     },
-    shadowOpacity: 0.19,
-    shadowRadius: 5.62,
-    elevation: 6,
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   description: {
     fontSize: 16,
