@@ -1,12 +1,20 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Colors } from "@/assets/Colors/Colors";
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
 
-function HeadingView() {
+type Props = {
+  title: String;
+};
+
+const HeadingView: React.FC<Props> = ({ title }) => {
+  const colorScheme = useColorScheme();
+  const textColor =
+    colorScheme === "light" ? Colors.light.icon : Colors.dark.icon;
   return (
     <View style={styles.titleView}>
-      <Text style={styles.title}>This is a test</Text>
+      <Text style={[styles.title, { color: textColor }]}>{title}</Text>
     </View>
   );
-}
+};
 
 export default HeadingView;
 

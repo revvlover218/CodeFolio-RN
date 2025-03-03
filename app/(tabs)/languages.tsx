@@ -1,28 +1,30 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import { Colors } from "@/assets/Colors/Colors";
 import { useColorScheme } from "react-native";
-import * as Local from "../utils/Constants";
-import TiledView from "../components/TiledView";
+import * as Local from "../utils/Localize";
+import TiledView, { ProgrammingLanguageProps } from "../components/TiledView";
+import { Data, ProgrammingLanguage } from "../utils/Data";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
   const viewBackgroundColor =
-    colorScheme === "light" ? Colors.light.background : Colors.dark.background;
+    colorScheme === "light"
+      ? Colors.light.secondaryBackground
+      : Colors.dark.secondaryBackground;
 
-  function renderFlatListItem(itemData) {
-    return TiledView(itemData.item);
-  }
+  const renderItem = ({ item }: { item: ProgrammingLanguage }) => {
+    return <TiledView content={item} />;
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
       <FlatList
         style={styles.list}
-        data={Local.programmingLanguages}
-        renderItem={renderFlatListItem}
-        keyExtractor={(item, index) => {
-          return item.id;
-        }}
-        // numColumns={2}
+        data={Data.programmingLanguages}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        contentContainerStyle={{ alignItems: "center" }}
       />
     </View>
   );

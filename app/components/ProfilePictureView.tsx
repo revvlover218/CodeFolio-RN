@@ -2,13 +2,14 @@ import { StyleSheet, View } from "react-native";
 import TitledView from "./TitledView";
 import SubtitledView from "./SubtitledView";
 import RoundedImageView from "./RoundedImageView";
+import { Data } from "../utils/Data";
 
 function ProfilePictureView() {
   return (
     <View style={styles.background}>
       <RoundedImageView></RoundedImageView>
-      <TitledView></TitledView>
-      <SubtitledView></SubtitledView>
+      <TitledView text={Data.name} />
+      <SubtitledView text={Data.email} />
     </View>
   );
 }

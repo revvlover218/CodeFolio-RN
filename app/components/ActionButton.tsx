@@ -4,11 +4,17 @@ import {
   Pressable,
   StyleSheet,
   useColorScheme,
-  Dimensions,
+  GestureResponderEvent,
 } from "react-native";
 import { Colors } from "@/assets/Colors/Colors";
+import React, { forwardRef } from "react";
 
-function ActionButton({ onPress }) {
+interface Props {
+  text: string;
+  onPress?: (event: GestureResponderEvent) => void;
+}
+
+const ActionButton = forwardRef<View, Props>(({ text, onPress }, ref) => {
   const colorScheme = useColorScheme();
   const backgroundColor =
     colorScheme === "light"
@@ -16,19 +22,23 @@ function ActionButton({ onPress }) {
       : Colors.dark.borderColor;
   return (
     <View style={[styles.container]}>
-      <Pressable onPress={onPress}>
+      <Pressable
+        style={({ pressed }) => [{ opacity: pressed ? 0.9 : 1 }]}
+        onPress={onPress}
+        ref={ref}
+      >
         <View
           style={[
             styles.buttonBackground,
             { backgroundColor: backgroundColor },
           ]}
         >
-          <Text style={styles.buttonText}>Go to languages</Text>
+          <Text style={styles.buttonText}>{text}</Text>
         </View>
       </Pressable>
     </View>
   );
-}
+});
 
 export default ActionButton;
 
@@ -58,7 +68,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "white",
   },
-  pressed: {
+  pressedOpacity: {
     opacity: 0.75,
   },
 });

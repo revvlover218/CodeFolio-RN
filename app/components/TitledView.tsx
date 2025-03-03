@@ -1,12 +1,20 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Colors } from "@/assets/Colors/Colors";
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
 
-function TitledView() {
+interface Props {
+  text: string;
+}
+
+const TitledView: React.FC<Props> = ({ text }) => {
+  const colorScheme = useColorScheme();
+  const textColor =
+    colorScheme === "light" ? Colors.light.icon : Colors.dark.icon;
   return (
     <View>
-      <Text style={styles.title}>Reshal Luchman</Text>
+      <Text style={[styles.title, { color: textColor }]}> {text}</Text>
     </View>
   );
-}
+};
 
 export default TitledView;
 

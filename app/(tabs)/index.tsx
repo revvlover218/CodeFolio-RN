@@ -5,20 +5,25 @@ import ProfilePictureView from "../components/ProfilePictureView";
 import DescriptionView from "../components/DescriptionView";
 import ActionButton from "../components/ActionButton";
 import { Link } from "expo-router";
+import { Localize } from "../utils/Localize";
+import { useRef } from "react";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
   const viewBackgroundColor =
-    colorScheme === "light" ? Colors.light.background : Colors.dark.background;
+    colorScheme === "light"
+      ? Colors.light.secondaryBackground
+      : Colors.dark.secondaryBackground;
+  const scrollRef = useRef<ScrollView>(null);
 
   return (
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
-      <ScrollView>
+      <ScrollView ref={scrollRef}>
         <ProfilePictureView></ProfilePictureView>
         <DescriptionView></DescriptionView>
       </ScrollView>
-      <Link href={"/(tabs)/languages"}>
-        <ActionButton />
+      <Link href={"/(tabs)/languages"} asChild>
+        <ActionButton text={Localize.goToLanguagesTitle} />
       </Link>
     </View>
   );

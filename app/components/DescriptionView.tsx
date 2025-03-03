@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, useColorScheme } from "react-native";
-import * as Localize from "../utils/Constants";
+import { Localize } from "../utils/Localize";
 import { Colors } from "@/assets/Colors/Colors";
 import HeadingView from "./HeadingView";
+import { Data } from "../utils/Data";
 
 function DescriptionView() {
   const colorScheme = useColorScheme();
@@ -13,19 +14,14 @@ function DescriptionView() {
   return (
     <View style={styles.container}>
       <View style={styles.shadowView}>
-        <View style={styles.titleView}>
-          <Text style={styles.title}>{Localize.aboutYourselfTitle}</Text>
-        </View>
-        <HeadingView title={Localize.aboutYourselfTitle}></HeadingView>
+        <HeadingView title={Localize.aboutYourselfTitle} />
         <View
           style={[
             styles.descriptionView,
             { backgroundColor: descriptionBackgroundColor },
           ]}
         >
-          <Text style={styles.description}>
-            {Localize.aboutYourselfDescription}
-          </Text>
+          <Text style={styles.description}>{Data.aboutMyself}</Text>
         </View>
       </View>
     </View>
