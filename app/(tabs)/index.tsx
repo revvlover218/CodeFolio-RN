@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { Colors } from "@/assets/Colors/Colors";
 import { useColorScheme } from "react-native";
 import ProfilePictureView from "../components/ProfilePictureView";
@@ -7,6 +7,7 @@ import ActionButton from "../components/ActionButton";
 import { Link } from "expo-router";
 import { Localize } from "../utils/Localize";
 import { useRef } from "react";
+import { useScrollToTop } from "@react-navigation/native";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
@@ -14,7 +15,10 @@ export default function Tab() {
     colorScheme === "light"
       ? Colors.light.secondaryBackground
       : Colors.dark.secondaryBackground;
+
+  // Scroll view reference
   const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   return (
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>

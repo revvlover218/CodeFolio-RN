@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { Colors } from "@/assets/Colors/Colors";
 import { useColorScheme } from "react-native";
-import * as Local from "../utils/Localize";
-import TiledView, { ProgrammingLanguageProps } from "../components/TiledView";
+import TiledView from "../components/TiledView";
 import { Data, ProgrammingLanguage } from "../utils/Data";
+import { useScrollToTop } from "@react-navigation/native";
+import { useRef } from "react";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
@@ -12,6 +13,10 @@ export default function Tab() {
       ? Colors.light.secondaryBackground
       : Colors.dark.secondaryBackground;
 
+  // Flatlist view reference
+  const flatListRef = useRef<FlatList>(null);
+  useScrollToTop(flatListRef);
+
   const renderItem = ({ item }: { item: ProgrammingLanguage }) => {
     return <TiledView content={item} />;
   };
@@ -19,6 +24,7 @@ export default function Tab() {
   return (
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
       <FlatList
+        ref={flatListRef}
         style={styles.list}
         data={Data.programmingLanguages}
         renderItem={renderItem}
