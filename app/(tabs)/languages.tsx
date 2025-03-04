@@ -2,7 +2,7 @@ import { View, StyleSheet, FlatList } from "react-native";
 import { Colors } from "@/assets/Colors/Colors";
 import { useColorScheme } from "react-native";
 import TiledView from "../components/TiledView";
-import { Data, ProgrammingLanguage } from "../utils/Data";
+import Data, { ProgrammingLanguage } from "../utils/Data";
 import { useScrollToTop } from "@react-navigation/native";
 import { useRef } from "react";
 

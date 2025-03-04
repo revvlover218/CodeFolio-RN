@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 import TitledView from "./TitledView";
 import SubtitledView from "./SubtitledView";
 import RoundedImageView from "./RoundedImageView";
-import { Data } from "../utils/Data";
+import Data from "../utils/Data";
 
 function ProfilePictureView() {
   return (

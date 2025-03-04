@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const reusableStyles = StyleSheet.create({
+const ReusableStyles = StyleSheet.create({
   containerView: {
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -16,3 +16,5 @@ export const reusableStyles = StyleSheet.create({
     elevation: 3,
   },
 });
+
+export default ReusableStyles;

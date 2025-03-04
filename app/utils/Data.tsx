@@ -148,7 +148,7 @@ This app is an example. It is written in React Native. By clicking on the button
 
 Enjoy!`;
 
-export const Data = {
+const Data = {
   name: "Reshal Luchman",
   email: "Reshal.luchman2@mtn.com",
   secondaryEmail: "luchmanreshal@gmail.com",
@@ -160,3 +160,5 @@ export const Data = {
   jobProposal:
     "Thank you for your interest in the following developer role: React Native. We are here to inform you that your application is [insert result here]. ",
 };
+
+export default Data;

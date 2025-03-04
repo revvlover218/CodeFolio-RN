@@ -1,13 +1,14 @@
 import { Colors } from "@/assets/Colors/Colors";
-import { StyleSheet, useColorScheme, View } from "react-native";
-import { reusableStyles } from "../utils/ReusableStyles";
+import { StyleSheet, useColorScheme, View, ViewStyle } from "react-native";
+import ReusableStyles from "../utils/ReusableStyles";
 import { ReactNode } from "react";
 
 interface Props {
   children?: ReactNode;
+  style?: ViewStyle;
 }
 
-const RoundedView: React.FC<Props> = ({ children }) => {
+const RoundedView: React.FC<Props> = ({ children, style }) => {
   const colorScheme = useColorScheme();
   const descriptionBackgroundColor =
     colorScheme === "light"
@@ -17,7 +18,8 @@ const RoundedView: React.FC<Props> = ({ children }) => {
     <View
       style={[
         styles.container,
-        reusableStyles.shadow3,
+        ReusableStyles.shadow3,
+        style,
         { backgroundColor: descriptionBackgroundColor },
       ]}
     >

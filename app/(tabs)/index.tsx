@@ -5,7 +5,7 @@ import ProfilePictureView from "../components/ProfilePictureView";
 import DescriptionView from "../components/DescriptionView";
 import ActionButton from "../components/ActionButton";
 import { Link } from "expo-router";
-import { Localize } from "../utils/Localize";
+import Localize from "../utils/Localize";
 import { useRef } from "react";
 import { useScrollToTop } from "@react-navigation/native";
 import PrimaryLocationView from "../components/PrimaryLocationView";

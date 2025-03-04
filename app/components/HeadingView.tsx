@@ -2,16 +2,16 @@ import { Colors } from "@/assets/Colors/Colors";
 import { View, Text, StyleSheet, useColorScheme } from "react-native";
 
 type Props = {
-  title: String;
+  text: String;
 };
 
-const HeadingView: React.FC<Props> = ({ title }) => {
+const HeadingView: React.FC<Props> = ({ text }) => {
   const colorScheme = useColorScheme();
   const textColor =
     colorScheme === "light" ? Colors.light.icon : Colors.dark.icon;
   return (
     <View style={styles.titleView}>
-      <Text style={[styles.title, { color: textColor }]}>{title}</Text>
+      <Text style={[styles.title, { color: textColor }]}>{text}</Text>
     </View>
   );
 };
