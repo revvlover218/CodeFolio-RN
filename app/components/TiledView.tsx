@@ -11,6 +11,7 @@ import {
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import ColorHelper from "@/assets/Colors/ColorHelper";
 
 export interface ProgrammingLanguageProps {
   content: ProgrammingLanguage;
@@ -130,8 +131,8 @@ const TiledView: React.FC<ProgrammingLanguageProps> = ({ content }) => {
     colorScheme === "light"
       ? Colors.light.secondaryBackground
       : Colors.dark.secondaryBackground;
-  const iconColor =
-    colorScheme === "light" ? Colors.light.icon : Colors.dark.icon;
+
+  const randomColorGenerator = new ColorHelper();
 
   return (
     <View style={[styles.container, { backgroundColor: backgroundColor }]}>
@@ -144,7 +145,7 @@ const TiledView: React.FC<ProgrammingLanguageProps> = ({ content }) => {
         <IconImageView
           icon={content.icon}
           library={content.library}
-          color={iconColor}
+          color={randomColorGenerator.getRandomHexColor()}
         />
       </View>
       <View style={styles.textContainer}>

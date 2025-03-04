@@ -1,6 +1,6 @@
 import { Alert, Linking } from "react-native";
-import { Localize } from "./Localize";
-import { Data } from "./Data";
+import Localize from "./Localize";
+import Data from "./Data";
 
 class LinkHelper {
   compose(email: string) {
