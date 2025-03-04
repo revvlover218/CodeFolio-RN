@@ -148,7 +148,10 @@ const TiledView: React.FC<ProgrammingLanguageProps> = ({ content }) => {
         />
       </View>
       <View style={styles.textContainer}>
-        <HeadingView text={content.name}></HeadingView>
+        <HeadingView
+          text={content.name}
+          useSecondaryFontSize={true}
+        ></HeadingView>
       </View>
     </View>
   );
