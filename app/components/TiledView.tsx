@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, useColorScheme } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  useColorScheme,
+  Pressable,
+} from "react-native";
 import HeadingView from "./HeadingView";
 import { IconLibrary, ProgrammingLanguage } from "../utils/Data";
 import React from "react";
@@ -166,7 +172,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     margin: 10,
-    // marginHorizontal: 10,
     borderRadius: 10,
     minWidth: 150,
     shadowColor: "#000",
