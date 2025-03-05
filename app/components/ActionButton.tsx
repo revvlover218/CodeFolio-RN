@@ -18,8 +18,8 @@ const ActionButton = forwardRef<View, Props>(({ text, onPress }, ref) => {
   const colorScheme = useColorScheme();
   const backgroundColor =
     colorScheme === "light"
-      ? Colors.light.borderColor
-      : Colors.dark.borderColor;
+      ? Colors.light.buttonBackground
+      : Colors.dark.buttonBackground;
   return (
     <View style={[styles.container]}>
       <Pressable

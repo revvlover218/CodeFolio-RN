@@ -5,8 +5,8 @@ function RoundedImageView() {
   const colorScheme = useColorScheme();
   const borderColor =
     colorScheme === "light"
-      ? Colors.light.borderColor
-      : Colors.dark.borderColor;
+      ? Colors.light.buttonBackground
+      : Colors.dark.buttonBackground;
   return (
     <View style={styles.container}>
       <Image
