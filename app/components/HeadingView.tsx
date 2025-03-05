@@ -1,11 +1,6 @@
-import { Colors } from "@/assets/Colors/Colors";
-import {
-  View,
-  Text,
-  StyleSheet,
-  useColorScheme,
-  ViewStyle,
-} from "react-native";
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
+
+import Colors from "@/assets/Colors/Colors";
 
 type Props = {
   text: String;

@@ -1,14 +1,15 @@
 import { View, StyleSheet, ScrollView } from "react-native";
-import { Colors } from "@/assets/Colors/Colors";
 import { useColorScheme } from "react-native";
+import { Link } from "expo-router";
+import { useRef } from "react";
+import { useScrollToTop } from "@react-navigation/native";
+
+import PrimaryLocationView from "../components/PrimaryLocationView";
 import ProfilePictureView from "../components/ProfilePictureView";
 import DescriptionView from "../components/DescriptionView";
 import ActionButton from "../components/ActionButton";
-import { Link } from "expo-router";
+import Colors from "@/assets/Colors/Colors";
 import Localize from "../utils/Localize";
-import { useRef } from "react";
-import { useScrollToTop } from "@react-navigation/native";
-import PrimaryLocationView from "../components/PrimaryLocationView";
 
 export default function Tab() {
   const colorScheme = useColorScheme();

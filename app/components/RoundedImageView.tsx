@@ -1,7 +1,8 @@
 import { Image, StyleSheet, useColorScheme, View } from "react-native";
-import { Colors } from "@/assets/Colors/Colors";
 
-function RoundedImageView() {
+import Colors from "@/assets/Colors/Colors";
+
+const RoundedImageView = () => {
   const colorScheme = useColorScheme();
   const borderColor =
     colorScheme === "light"
@@ -15,7 +16,7 @@ function RoundedImageView() {
       />
     </View>
   );
-}
+};
 
 export default RoundedImageView;
 

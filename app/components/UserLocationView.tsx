@@ -1,7 +1,8 @@
-import { GestureResponderEvent, Pressable, StyleSheet } from "react-native";
-import RoundedView from "./RoundedView";
-import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
+import { GestureResponderEvent, Pressable, StyleSheet } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
+import RoundedView from "./RoundedView";
 
 interface Props {
   locationButtonPressed: (event: GestureResponderEvent) => void;

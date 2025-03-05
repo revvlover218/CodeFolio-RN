@@ -1,7 +1,8 @@
-import { Colors } from "@/assets/Colors/Colors";
 import { StyleSheet, useColorScheme, View, ViewStyle } from "react-native";
-import ReusableStyles from "../utils/ReusableStyles";
 import { ReactNode } from "react";
+
+import Colors from "@/assets/Colors/Colors";
+import ReusableStyles from "../utils/ReusableStyles";
 
 interface Props {
   children?: ReactNode;

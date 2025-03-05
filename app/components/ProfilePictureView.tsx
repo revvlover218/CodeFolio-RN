@@ -1,10 +1,11 @@
 import { StyleSheet, View } from "react-native";
+
 import TitledView from "./TitledView";
 import SubtitledView from "./SubtitledView";
 import RoundedImageView from "./RoundedImageView";
 import Data from "../utils/Data";
 
-function ProfilePictureView() {
+const ProfilePictureView = () => {
   return (
     <View style={styles.background}>
       <RoundedImageView></RoundedImageView>
@@ -14,7 +15,7 @@ function ProfilePictureView() {
       <SubtitledView text={Data.phone} />
     </View>
   );
-}
+};
 
 export default ProfilePictureView;
 

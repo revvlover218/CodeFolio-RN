@@ -1,11 +1,11 @@
-import { View, StyleSheet, FlatList, Pressable } from "react-native";
-import { Colors } from "@/assets/Colors/Colors";
+import { View, StyleSheet, FlatList } from "react-native";
 import { useColorScheme } from "react-native";
-import TiledView from "../components/TiledView";
-import Data, { ProgrammingLanguage } from "../utils/Data";
 import { useScrollToTop } from "@react-navigation/native";
 import { useRef } from "react";
-import * as Notifications from "expo-notifications";
+
+import Colors from "@/assets/Colors/Colors";
+import TiledView from "../components/TiledView";
+import Data, { ProgrammingLanguage } from "../utils/Data";
 
 export default function Tab() {
   const colorScheme = useColorScheme();
@@ -26,7 +26,6 @@ export default function Tab() {
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
       <FlatList
         ref={flatListRef}
-        style={styles.list}
         data={Data.programmingLanguages}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
@@ -41,5 +40,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  list: {},
 });

@@ -21,3 +21,5 @@ export const Colors = {
     descriptionBackground: "#B4D4EE",
   },
 };
+
+export default Colors;

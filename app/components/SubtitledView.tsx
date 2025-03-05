@@ -6,6 +6,7 @@ import {
   useColorScheme,
   Pressable,
 } from "react-native";
+
 import {
   isValidEmailAddressOrPhoneNumber,
   isValidEmailAddress,
@@ -21,13 +22,13 @@ const SubtitledView: React.FC<Props> = ({ text }) => {
   const colorScheme = useColorScheme();
   const textColor = colorScheme === "light" ? "dimgray" : "lightgray";
 
-  function onPress() {
+  const onPress = () => {
     if (isValidEmailAddress({ text })) {
       new LinkHelper().compose(text);
     } else if (isValidCellNumber({ text })) {
       new LinkHelper().dial(text);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>

@@ -6,8 +6,9 @@ import {
   useColorScheme,
   GestureResponderEvent,
 } from "react-native";
-import { Colors } from "@/assets/Colors/Colors";
 import React, { forwardRef } from "react";
+
+import Colors from "@/assets/Colors/Colors";
 
 interface Props {
   text: string;
@@ -67,8 +68,5 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
     color: "white",
-  },
-  pressedOpacity: {
-    opacity: 0.75,
   },
 });

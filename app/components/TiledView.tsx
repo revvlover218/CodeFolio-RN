@@ -16,9 +16,9 @@ import {
 } from "@expo/vector-icons";
 import * as Notifications from "expo-notifications";
 
-import ColorHelper from "@/assets/Colors/ColorHelper";
 import HeadingView from "./HeadingView";
-import { Colors } from "@/assets/Colors/Colors";
+import ColorHelper from "@/assets/Colors/ColorHelper";
+import Colors from "@/assets/Colors/Colors";
 import { IconLibrary, ProgrammingLanguage } from "../utils/Data";
 import Localize from "../utils/Localize";
 

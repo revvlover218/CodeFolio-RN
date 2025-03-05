@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import * as Location from "expo-location";
 
 import HeadingView from "./HeadingView";
+import SubtitledView from "./SubtitledView";
+import RoundedView from "./RoundedView";
+import ActionButton from "./ActionButton";
 import Localize from "../utils/Localize";
 import ReusableStyles from "../utils/ReusableStyles";
-import RoundedView from "./RoundedView";
 import UserLocationView from "./UserLocationView";
-import ActionButton from "./ActionButton";
-import SubtitledView from "./SubtitledView";
 
 const PrimaryLocationView = () => {
   interface Region {
