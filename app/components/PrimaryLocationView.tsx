@@ -98,7 +98,7 @@ const PrimaryLocationView = () => {
         await Location.requestForegroundPermissionsAsync();
       if (newPermission !== "granted") {
         Alert.alert(
-          Localize.locationPermissionRequiredTitle,
+          Localize.permissionRequiredTitle,
           Localize.locationPermissionRequiredDescription,
           [{ text: Localize.ok }]
         );

@@ -1,14 +1,11 @@
 import {
   View,
-  Text,
   StyleSheet,
   useColorScheme,
   Pressable,
+  Alert,
 } from "react-native";
-import HeadingView from "./HeadingView";
-import { IconLibrary, ProgrammingLanguage } from "../utils/Data";
 import React from "react";
-import { Colors } from "@/assets/Colors/Colors";
 import {
   Entypo,
   FontAwesome,
@@ -17,7 +14,13 @@ import {
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import * as Notifications from "expo-notifications";
+
 import ColorHelper from "@/assets/Colors/ColorHelper";
+import HeadingView from "./HeadingView";
+import { Colors } from "@/assets/Colors/Colors";
+import { IconLibrary, ProgrammingLanguage } from "../utils/Data";
+import Localize from "../utils/Localize";
 
 export interface ProgrammingLanguageProps {
   content: ProgrammingLanguage;
@@ -140,27 +143,64 @@ const TiledView: React.FC<ProgrammingLanguageProps> = ({ content }) => {
 
   const randomColorGenerator = new ColorHelper();
 
+  const onPress = async () => {
+    const hasPermission = await requestNotificationsPermission();
+    if (!hasPermission) {
+      Alert.alert(
+        Localize.error,
+        Localize.pushNotificationPermissionErrorMessage
+      );
+    }
+
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: content.name,
+        body: Localize.pushNotificationMessage,
+      },
+      trigger: { seconds: 1 },
+    });
+  };
+
+  const requestNotificationsPermission = async () => {
+    const { status } = await Notifications.getPermissionsAsync();
+    if (status !== "granted") {
+      const { status: newStatus } =
+        await Notifications.requestPermissionsAsync();
+      if (newStatus !== "granted") {
+        Alert.alert(
+          Localize.permissionRequiredTitle,
+          Localize.pushNotificationPermissionDescription,
+          [{ text: Localize.ok }]
+        );
+        return false;
+      }
+    }
+    return true;
+  };
+
   return (
-    <View style={[styles.container, { backgroundColor: backgroundColor }]}>
-      <View
-        style={[
-          styles.roundedIconContainer,
-          { backgroundColor: iconBackgroundColor },
-        ]}
-      >
-        <IconImageView
-          icon={content.icon}
-          library={content.library}
-          color={randomColorGenerator.getRandomHexColor()}
-        />
+    <Pressable onPress={onPress}>
+      <View style={[styles.container, { backgroundColor: backgroundColor }]}>
+        <View
+          style={[
+            styles.roundedIconContainer,
+            { backgroundColor: iconBackgroundColor },
+          ]}
+        >
+          <IconImageView
+            icon={content.icon}
+            library={content.library}
+            color={randomColorGenerator.getRandomHexColor()}
+          />
+        </View>
+        <View style={styles.textContainer}>
+          <HeadingView
+            text={content.name}
+            useSecondaryFontSize={true}
+          ></HeadingView>
+        </View>
       </View>
-      <View style={styles.textContainer}>
-        <HeadingView
-          text={content.name}
-          useSecondaryFontSize={true}
-        ></HeadingView>
-      </View>
-    </View>
+    </Pressable>
   );
 };
 
