@@ -8,6 +8,7 @@ import PrimaryLocationView from "../components/PrimaryLocationView";
 import ProfilePictureView from "../components/ProfilePictureView";
 import DescriptionView from "../components/DescriptionView";
 import ActionButton from "../components/ActionButton";
+import DividerLineView from "../components/DividerLineView";
 import Colors from "@/assets/Colors/Colors";
 import Localize from "../utils/Localize";
 
@@ -26,6 +27,7 @@ export default function Tab() {
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
       <ScrollView ref={scrollRef}>
         <ProfilePictureView></ProfilePictureView>
+        <DividerLineView></DividerLineView>
         <DescriptionView></DescriptionView>
         <PrimaryLocationView />
       </ScrollView>
