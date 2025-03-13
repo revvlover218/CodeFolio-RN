@@ -21,3 +21,7 @@ powerful features of React Native.
 Lastly, it also has dark mode capabilities!
 
 ## Screenshots
+Light Mode:
+
+![Simulator Screenshot - iPhone 15 Pro - 2025-03-13 at 17 14 10](https://github.com/user-attachments/assets/2b091904-8485-4113-8daf-720a00612f00)
+![Simulator Screenshot - iPhone 15 Pro - 2025-03-13 at 17 14 05](https://github.com/user-attachments/assets/b0bf6b50-83c1-442e-8bc2-cc812b8f0ded)
