@@ -20,7 +20,7 @@ const programmingLanguages: ProgrammingLanguage[] = [
     id: "1",
     name: "Swift",
     icon: "swift",
-    library: IconLibrary.fontisto, //FontAwesome6
+    library: IconLibrary.fontisto,
   },
   {
     id: "2",
