@@ -1,50 +1,23 @@
-# Welcome to your Expo app 👋
+# Welcome to CodeFolio-RN
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a portfolio demo app to describe a little bit about myself and the programming languages I have developed over my time in 
+Information Technology.
+
+It is also my first dive into the world of React Native. A platform agnostic langauge development platform.
+
+It is also built using Expo.
 
 ## Get started
 
-1. Install dependencies
+To get started with the project visit [Expo](https://expo.dev) and [`create-expo-app`](https://www.npmjs.com/package/create-expo-app) and
+follow the setup guidelines to install all dependencies needed to be able to run an expo app including, [node.js](https://nodejs.org/en)
+and Expo Go.
 
-   ```bash
-   npm install
-   ```
+## About the app
 
-2. Start the app
+CodeFolio also includes the integration of libraries and APIs such as Expo-Router, Maps, Notifications. A great way to showcase some of the
+powerful features of React Native.
 
-   ```bash
-    npx expo start
-   ```
+Lastly, it also has dark mode capabilities!
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Screenshots
