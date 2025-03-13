@@ -20,7 +20,7 @@ const programmingLanguages: ProgrammingLanguage[] = [
     id: "1",
     name: "Swift",
     icon: "swift",
-    library: IconLibrary.fontisto, //FontAwesome6
+    library: IconLibrary.fontisto,
   },
   {
     id: "2",
@@ -150,7 +150,6 @@ Enjoy!`;
 
 const Data = {
   name: "Reshal Luchman",
-  email: "Reshal.luchman2@mtn.com",
   secondaryEmail: "luchmanreshal@gmail.com",
   phone: "+27713453720",
   profession: "Work in progress - React Native Developer!",

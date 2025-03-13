@@ -8,10 +8,10 @@ import Data from "../utils/Data";
 const ProfilePictureView = () => {
   return (
     <View style={styles.background}>
-      <RoundedImageView></RoundedImageView>
+      <RoundedImageView />
       <TitledView text={Data.name} />
       <SubtitledView text={Data.profession} />
-      <SubtitledView text={Data.email} />
+      <SubtitledView text={Data.secondaryEmail} />
       <SubtitledView text={Data.phone} />
     </View>
   );

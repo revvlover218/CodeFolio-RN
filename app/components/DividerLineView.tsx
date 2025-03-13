@@ -3,9 +3,7 @@ import { StyleSheet, useColorScheme, View } from "react-native";
 const DividerLineView = () => {
   const colorScheme = useColorScheme();
   const backgroundColor = colorScheme === "light" ? "dimgray" : "lightgray";
-  return (
-    <View style={[styles.line, { backgroundColor: backgroundColor }]}></View>
-  );
+  return <View style={[styles.line, { backgroundColor: backgroundColor }]} />;
 };
 
 export default DividerLineView;
