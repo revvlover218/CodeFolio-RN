@@ -58,7 +58,7 @@ const PrimaryLocationView = () => {
         <ActionButton
           text={Localize.userLocationTitle}
           onPress={userLocationAction}
-        ></ActionButton>
+        />
       );
     }
     return;

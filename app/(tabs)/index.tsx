@@ -26,9 +26,9 @@ export default function Tab() {
   return (
     <View style={[styles.container, { backgroundColor: viewBackgroundColor }]}>
       <ScrollView ref={scrollRef}>
-        <ProfilePictureView></ProfilePictureView>
-        <DividerLineView></DividerLineView>
-        <DescriptionView></DescriptionView>
+        <ProfilePictureView />
+        <DividerLineView />
+        <DescriptionView />
         <PrimaryLocationView />
       </ScrollView>
       <Link href={"/(tabs)/languages"} asChild>
